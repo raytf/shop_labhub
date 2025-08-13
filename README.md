@@ -92,6 +92,9 @@ The schemas for all document types are defined in the `studio/schemaTypes/docume
 
 #### 1. Deploy Sanity Studio
 
+First create a deploy token in the Sanity admin:
+API -> Tokens -> Add API Token -> Create a 'Deploy Studio' token
+
 Your Next.js frontend (`/web`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
 
 > **⚠️ Important**: When initializing the template with the Sanity CLI, the `.github` folder may not be included or might be renamed to `github` (without the dot). If you don't see a `.github` folder in your project root, you'll need to manually create it and copy the GitHub Actions workflows from the [template repository](https://github.com/robotostudio/turbo-start-sanity/tree/main/.github) for the deployment automation to work.
@@ -132,7 +135,11 @@ You have the freedom to deploy your Next.js app to your hosting provider of choi
 3. Set the `Root Directory` to your Next.js app (`/apps/web`).
 4. Configure your Environment Variables.
 
-#### 3. Invite a collaborator
+#### 3. Add CORS origins
+
+Add both the Vercel app URL and Sanity Studio URL to your CORS origins in the Sanity API settings.
+
+#### 4. Invite a collaborator
 
 Now that you've deployed your Next.js application and Sanity Studio, you can optionally invite a collaborator to your Studio. Open up [Manage](https://www.sanity.io/manage), select your project and click "Invite project members"
 
