@@ -4,7 +4,7 @@ import { getBaseUrl } from "@/config";
 import { client } from "@/lib/sanity/client";
 import { querySitemapData } from "@/lib/sanity/query";
 
-const baseUrl = getBaseUrl();
+const baseUrl = getBaseUrl() ?? "http://localhost:3000";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { slugPages, blogPages } = await client.fetch(querySitemapData);
