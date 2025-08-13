@@ -88,7 +88,7 @@ export function getSEOMetadata(page: PageSeoData = {}): Metadata {
     ...pageOverrides
   } = page;
 
-  const baseUrl = getBaseUrl();
+  const baseUrl = getBaseUrl() ?? "http://localhost:3000";
   const pageUrl = buildPageUrl({ baseUrl, slug });
 
   // Build default metadata values
